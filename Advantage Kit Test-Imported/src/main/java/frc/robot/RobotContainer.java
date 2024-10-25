@@ -13,6 +13,7 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.MoveArmAndShooterToPosition;
 import frc.robot.commands.MoveArmRelativeDegrees;
 import frc.robot.commands.MoveShooterRelativeDegrees;
+import frc.robot.commands.MoveShooterToPosition;
 import frc.robot.commands.TurnToAutoAlign;
 import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveIO;
@@ -117,7 +118,9 @@ public class RobotContainer {
     
     NamedCommands.registerCommand("Print Command", m_arm.printCommand());
     NamedCommands.registerCommand("Shoot Command", getShooterCommand());
-    NamedCommands.registerCommand("Pickup Command", new InstantCommand(() -> getPickUpNote()));
+    NamedCommands.registerCommand("Pickup Note Command", new InstantCommand(() -> getPickUpNote()));
+    NamedCommands.registerCommand("Pickup Position Command", new MoveShooterToPosition(m_shooter, 50));
+    NamedCommands.registerCommand("Shooter Position 1", new MoveShooterToPosition(m_shooter, 43));
       
     // Configure the trigger bindings
     m_vision = new Vision(m_drivetrain);

@@ -19,11 +19,11 @@ public class MoveShooterToPosition extends Command {
     m_shooter = shooter;
     m_shooterTarget = shooterTarget;
 
-    addRequirements(m_shooter);
+    //addRequirements(m_shooter);
   }
 
   public double calculateNegativeOrPositive(double angle, double target) {
-    boolean greater = target - angle > 0 && target - angle < 180;
+    boolean greater = (target - angle < 180 && target - angle > 0) || (target - angle < -180);
     if (greater) {
       return 1;
     } else {

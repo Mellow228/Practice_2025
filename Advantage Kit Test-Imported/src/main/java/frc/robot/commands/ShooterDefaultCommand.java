@@ -35,7 +35,7 @@ public class ShooterDefaultCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    /* if (RobotContainer.DRIVETRAIN_STATE == DrivetrainState.ROBOT_ALIGN && RobotContainer.PICKUP_STATE == PickupState.HAS_NOTE) {
+     if (RobotContainer.DRIVETRAIN_STATE == DrivetrainState.ROBOT_ALIGN && RobotContainer.PICKUP_STATE == PickupState.HAS_NOTE) {
       double ty = m_vision.getGoalDistance(true);
       targetAngle = m_shooter.getShooterAngleMapDown(ty);
       Logger.recordOutput("default", targetAngle);
@@ -43,7 +43,7 @@ public class ShooterDefaultCommand extends Command {
       double sign = calculateNegativeOrPositive();
       m_shooter.changeAngle2(sign);
       }
-    } */
+    } 
     targetAngle = m_shooter.getTargetAngle();
     Logger.recordOutput("default", targetAngle);
       if ((Math.abs((targetAngle - m_shooter.getAngle2()) % 360)) > 2) {

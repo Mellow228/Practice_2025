@@ -32,7 +32,7 @@ public class Vision {
     private Drivetrain m_drivetrain;
     
     public Vision(Drivetrain drivetrain) {
-        
+        m_drivetrain = drivetrain;
     }
  
     public Pose3d getPoseApril() {
@@ -72,7 +72,11 @@ public class Vision {
 }
 
 public double getGoalDistance(boolean tr) {
-    
+    Pose2d pose = m_drivetrain.getPose();
+      if (pose != null) {
+        return Math.pow(Units.inchesToMeters(218.42) - pose.getY(), 2) + Math.pow(Units.inchesToMeters(-1.5) - pose.getX(), 2) - .422;
+        
+    }
         return 0;
 
 }
