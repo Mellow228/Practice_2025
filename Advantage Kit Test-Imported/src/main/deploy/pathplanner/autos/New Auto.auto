@@ -7,19 +7,85 @@
         {
           "type": "path",
           "data": {
-            "pathName": "New Path"
+            "pathName": "Path 1"
           }
         },
         {
           "type": "named",
           "data": {
-            "name": "Print Command"
+            "name": "Shoot Command"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Pickup Command"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Shoot Command"
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "Example Path"
+            "pathName": "Path2"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Pickup Command"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Shoot Command"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Path 3"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Pickup Command"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Shoot Command"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Path 4"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Pickup Command"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Path 5"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Shoot Command"
           }
         }
       ]

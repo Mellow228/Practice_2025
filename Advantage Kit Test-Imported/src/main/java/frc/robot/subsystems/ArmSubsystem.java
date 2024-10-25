@@ -26,7 +26,7 @@ import frc.robot.SimulateModel;
 public class ArmSubsystem extends SubsystemBase {
   /** Creates a new Arm. */
   private double angle1 = 5;
-  private double angle2 = 70;
+  private double angle2 = 50;
   double[] m_origin = new double[] { -.26, 0, .2731 };
   double[] elbowPlace = new double[] { 0.15, 0, 0 };
   double armLength = 0.6;

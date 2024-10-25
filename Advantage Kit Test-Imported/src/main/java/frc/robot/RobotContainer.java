@@ -29,6 +29,8 @@ import java.util.Objects;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
+import org.littletonrobotics.junction.Logger;
+
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.auto.NamedCommands;
 import com.pathplanner.lib.commands.PathPlannerAuto;
@@ -114,6 +116,8 @@ public class RobotContainer {
     
     
     NamedCommands.registerCommand("Print Command", m_arm.printCommand());
+    NamedCommands.registerCommand("Shoot Command", getShooterCommand());
+    NamedCommands.registerCommand("Pickup Command", new InstantCommand(() -> getPickUpNote()));
       
     // Configure the trigger bindings
     m_vision = new Vision(m_drivetrain);
@@ -195,12 +199,12 @@ public class RobotContainer {
     // m_vision)));
     //m_driverController.x().whileTrue(goToAutoTargetPosition());
     m_driverController.y().whileTrue(new InstantCommand(() -> getPickUpNote()));
-    m_driverController.a().onTrue(getShooterCommand().alongWith(new InstantCommand(() -> System.out.println("THIS WORKS"))));
+    m_driverController.a().onTrue(getShooterCommand());
     m_driverController.b().whileTrue((new InstantCommand(() -> toggleSpeakerandAmp()))); 
 
 
-    ///m_driverController.x().onTrue((new InstantCommand(() -> DRIVETRAIN_STATE = DrivetrainState.ROBOT_ALIGN))
-       // .alongWith((new MoveArmAndShooterToPosition(m_shooter, m_arm, 5))));
+    m_driverController.x().onTrue((new InstantCommand(() -> DRIVETRAIN_STATE = DrivetrainState.ROBOT_ALIGN))
+       .alongWith((new MoveArmAndShooterToPosition(m_shooter, m_arm, 5))));
   }
 
   /**
@@ -223,7 +227,7 @@ public class RobotContainer {
 
   public void getPickUpNote() {
     for (int i = 0; i < blueNotesPositions.size(); i++) {
-      //Logger.recordOutput("point" + i, blueNotesPositions.get(i));
+      Logger.recordOutput("point" + i, blueNotesPositions.get(i));
     }
     int num = m_drivetrain.pointInBox(blueNotesPositions);
     if (num != -1) {
@@ -288,4 +292,4 @@ public void moveArmToGroundPickup() {
     new MoveArmAndShooterToPosition(m_shooter, m_arm, 5, 50);
 }
 
-}
+}  

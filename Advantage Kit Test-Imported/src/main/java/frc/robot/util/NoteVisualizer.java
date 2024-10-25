@@ -35,7 +35,7 @@ public class NoteVisualizer {
   private static Supplier<Rotation2d> armAngleSupplier;
   private static Supplier<Pose3d> armPoseSupplier;
   public static final List<Translation2d> autoNotes = new ArrayList<>();
-  private static boolean hasNote = false;
+  private static boolean hasNote = true;
   
 
   public static void setPoseSuppliers(Supplier<Pose2d> pose1, Supplier<Rotation2d> pose2, Supplier<Pose3d> armPose) {
